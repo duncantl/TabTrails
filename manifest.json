@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+
+  "name": "TabTrails",
+  "description": "Trail of URLs within a Tab",
+  "version": "0.1-0",
+
+  "permissions": [
+    "storage",
+    "webNavigation"
+  ],
+
+  "homepage_url": "https://github.com/duncantl/TabTrails",
+
+// "content_scripts":  [ {
+//     "matches": ["<all_urls>"],
+//     "js": [ "content.js" ]
+// } ] //,
+
+
+  "background": {
+      "scripts": [ "funs.js", "background2.js" ],
+      "persistent": true
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+	"id": "tabtrails@github.com"
+    }
+  },
+
+
+  "options_ui": { "page": "options.html",
+   	          "browser_style": true
+	      },
+
+
+  "browser_action": {
+    "default_title": "TabTrails",
+    "default_popup": "popup.html"
+  }
+}
