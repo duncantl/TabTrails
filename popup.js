@@ -1,6 +1,13 @@
 // console.log("Ok");
 
-document.getElementById('start').addEventListener("click", startIt);
+function sendEv(ev)
+{
+    browser.runtime.sendMessage(ev.target.id);
+}
 
-document.getElementById('stop').addEventListener("click", stopIt);
+document.getElementById('start').addEventListener("click", sendEv);
+document.getElementById('stop').addEventListener("click", sendEv);
+document.getElementById('reset').addEventListener("click", sendEv);
+document.getElementById('summary').addEventListener("click", sendEv);
+document.getElementById('export').addEventListener("click", sendEv);
 
