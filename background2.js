@@ -3,7 +3,7 @@ var results = browser.storage.local.get();
 results.then ( (obj) => {
 
     if(!obj) 
-	obj = [];
+	reset(); // obj = [];
 
     
     tabTrails = obj;
@@ -13,9 +13,9 @@ results.then ( (obj) => {
 });
 
 
+// Handle messages from the popup to control the operations this background entity is doing
 function popupEvent(id)
 {
-//    console.log("popupEvent " + id);
     switch(id) {
 	  case "reset":
 	   reset()
